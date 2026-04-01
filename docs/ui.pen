@@ -1,0 +1,2428 @@
+{
+  "version": "2.9",
+  "children": [
+    {
+      "type": "frame",
+      "id": "EClFA",
+      "x": 0,
+      "y": 0,
+      "name": "Show Me — 单页网站",
+      "width": 1280,
+      "fill": "#FAF8F5",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "tghA1",
+          "name": "Hero",
+          "width": "fill_container",
+          "height": 800,
+          "layout": "vertical",
+          "padding": [
+            60,
+            80
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "v6dKp",
+              "name": "导航栏",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "JYb81",
+                  "name": "logo",
+                  "fill": "#2C2C2C",
+                  "content": "Show Me",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "mDQmd",
+                  "name": "navLinks",
+                  "gap": 40,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "gWUKM",
+                      "fill": "#7A7268",
+                      "content": "About",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "clCeS",
+                      "fill": "#7A7268",
+                      "content": "Works",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "DLgFs",
+                      "fill": "#7A7268",
+                      "content": "Thinking",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "rG6Yd",
+                      "fill": "#7A7268",
+                      "content": "Journey",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jIQ3J",
+                      "fill": "#7A7268",
+                      "content": "Connect",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "yJBJF",
+              "name": "heroContent",
+              "layout": "vertical",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "MFzPZ",
+                  "fill": "#2C2C2C",
+                  "content": "构建工具，记录思考。",
+                  "fontFamily": "Inter",
+                  "fontSize": 52,
+                  "letterSpacing": -1
+                },
+                {
+                  "type": "text",
+                  "id": "ilXur",
+                  "fill": "#7A7268",
+                  "content": "帆软平台工程师 · 独立创造者 · AI 原生开发者",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "kow02",
+              "name": "scrollCue",
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wjRgz",
+                  "fill": "#7A7268",
+                  "content": "向下滚动",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "rectangle",
+                  "id": "EUNt1",
+                  "fill": "#C4956A",
+                  "width": 1,
+                  "height": 48
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "9r9JM",
+          "name": "About",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 64,
+          "padding": [
+            120,
+            160
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "04RWT",
+              "name": "aboutHeader",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "yBFBz",
+                  "fill": "#C4956A",
+                  "content": "关于",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "BjTUI",
+                  "fill": "#2C2C2C",
+                  "content": "在企业平台与独立创造之间",
+                  "fontFamily": "Inter",
+                  "fontSize": 36
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HXhKw",
+              "name": "aboutContent",
+              "width": 640,
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "UG4Dw",
+                  "fill": "#2C2C2C",
+                  "textGrowth": "fixed-width",
+                  "width": 640,
+                  "content": "白天是帆软的平台工程师，负责权限、调度、集群、缓存等企业级系统的地基。晚上和周末则是一个独立创造者，构建自己相信的工具。",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "vTljX",
+                  "fill": "#7A7268",
+                  "textGrowth": "fixed-width",
+                  "width": 640,
+                  "content": "相信第一性原理，拒绝过度设计。相信好的工具应该像空气一样自然存在，使用时毫无察觉，离开时才发现它的不可或缺。",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "pKA0o",
+              "name": "skills",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "tfnsD",
+                  "name": "tag1",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 20,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "7Gezs",
+                      "fill": "#2C2C2C",
+                      "content": "Go",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "2Mun1",
+                  "name": "tag2",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 20,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QG9Js",
+                      "fill": "#2C2C2C",
+                      "content": "React",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qlE7S",
+                  "name": "tag3",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 20,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "9utEB",
+                      "fill": "#2C2C2C",
+                      "content": "AI Agent",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GKcbA",
+                  "name": "tag4",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 20,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DAPfM",
+                      "fill": "#2C2C2C",
+                      "content": "RAG",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dH6zn",
+                  "name": "tag5",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 20,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "TOOp8",
+                      "fill": "#2C2C2C",
+                      "content": "分布式系统",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "HnnDM",
+                  "name": "tag6",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 20,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "O7Lka",
+                      "fill": "#2C2C2C",
+                      "content": "TypeScript",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "eAgV8",
+          "name": "Works",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 80,
+          "padding": [
+            120,
+            160
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "mlMjY",
+              "name": "worksHeader",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "kWaOS",
+                  "fill": "#C4956A",
+                  "content": "作品",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "pDh15",
+                  "fill": "#2C2C2C",
+                  "content": "构建过的工具与系统",
+                  "fontFamily": "Inter",
+                  "fontSize": 36
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "XDUg2",
+              "name": "filterTabs",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wpS1P",
+                  "fill": "#2C2C2C",
+                  "content": "全部",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "ePwCL",
+                  "fill": "#7A7268",
+                  "content": "工具",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "kDnVT",
+                  "fill": "#7A7268",
+                  "content": "平台",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "CfvOM",
+                  "fill": "#7A7268",
+                  "content": "AI",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "c3mhD",
+              "name": "worksGrid",
+              "width": 960,
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "uLgai",
+                  "name": "row1",
+                  "gap": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "TtMOs",
+                      "name": "card1",
+                      "width": 464,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "9YwfO",
+                          "fill": "#2C2C2C",
+                          "content": "Eden",
+                          "fontFamily": "Inter",
+                          "fontSize": 24,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "HNujx",
+                          "fill": "#7A7268",
+                          "textGrowth": "fixed-width",
+                          "width": 400,
+                          "content": "基于 Obsidian 的博客系统，Markdown 即发布。让写作回归纯粹。",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "QbOku",
+                          "name": "tags1",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Vp6Yx",
+                              "fill": "#C4956A",
+                              "content": "工具",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Vdwdg",
+                              "fill": "#8B9E82",
+                              "content": "Go",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "d6Mr4",
+                              "fill": "#8B9E82",
+                              "content": "React",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EmPJB",
+                      "name": "card2",
+                      "width": 464,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "uKDTk",
+                          "fill": "#2C2C2C",
+                          "content": "Northstar",
+                          "fontFamily": "Inter",
+                          "fontSize": 24,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "rMWj9",
+                          "fill": "#7A7268",
+                          "textGrowth": "fixed-width",
+                          "width": 400,
+                          "content": "零售经济数据分析工具，16 项统计指标。让数据说话。",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "I3hgD",
+                          "name": "tags2",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "KSi4B",
+                              "fill": "#C4956A",
+                              "content": "工具",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "NYGrD",
+                              "fill": "#8B9E82",
+                              "content": "数据分析",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ofhr8",
+                  "name": "row2",
+                  "gap": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "UNc0X",
+                      "name": "card3",
+                      "width": 464,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "gJmnC",
+                          "fill": "#2C2C2C",
+                          "content": "Confluence MCP",
+                          "fontFamily": "Inter",
+                          "fontSize": 24,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "nTaB9",
+                          "fill": "#7A7268",
+                          "textGrowth": "fixed-width",
+                          "width": 400,
+                          "content": "让 AI 读写 Confluence 的 MCP Server。连接 AI 与知识库。",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VaBV0",
+                          "name": "tags3",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "rbdYW",
+                              "fill": "#C4956A",
+                              "content": "AI",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Js0bO",
+                              "fill": "#8B9E82",
+                              "content": "开源",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "9wyNI",
+                      "name": "card4",
+                      "width": 464,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": 32,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xzbet",
+                          "fill": "#2C2C2C",
+                          "content": "帆软平台缓存体系",
+                          "fontFamily": "Inter",
+                          "fontSize": 24,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "FfUmF",
+                          "fill": "#7A7268",
+                          "textGrowth": "fixed-width",
+                          "width": 400,
+                          "content": "三级缓存架构设计与实现，支撑企业级高性能访问。",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "hVy9E",
+                          "name": "tags4",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "euy3D",
+                              "fill": "#C4956A",
+                              "content": "平台",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "EBS3S",
+                              "fill": "#8B9E82",
+                              "content": "分布式系统",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "wtSIv",
+          "name": "Thinking",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 80,
+          "padding": [
+            120,
+            160
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "yAARi",
+              "name": "thinkingHeader",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Xq3Ia",
+                  "fill": "#C4956A",
+                  "content": "思考",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "cbD9f",
+                  "fill": "#2C2C2C",
+                  "content": "思维的切面",
+                  "fontFamily": "Inter",
+                  "fontSize": 36
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "deL9o",
+              "name": "thinkingTopics",
+              "gap": 48,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GCyx6",
+                  "fill": "#2C2C2C",
+                  "content": "工程哲学",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "QAfuA",
+                  "fill": "#7A7268",
+                  "content": "AI 实践",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "RSF1h",
+                  "fill": "#7A7268",
+                  "content": "职业成长",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "4TVvU",
+                  "fill": "#7A7268",
+                  "content": "生活观察",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NMcuW",
+              "name": "articles",
+              "width": 720,
+              "layout": "vertical",
+              "gap": 48,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "MWEmu",
+                  "name": "article1",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ZbxA7",
+                      "fill": "#2C2C2C",
+                      "content": "第一性原理与工程实践",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZLGbv",
+                      "fill": "#7A7268",
+                      "content": "物理是定律，其他都是建议。在工程世界里，这意味着什么？",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "x0JHY",
+                      "name": "article1Meta",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6ZbBe",
+                          "fill": "#C4956A",
+                          "content": "工程哲学",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "z8cyj",
+                          "fill": "#A09890",
+                          "content": "2025.03",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "line",
+                  "id": "f6XQy",
+                  "fill": "#E8E4DF",
+                  "width": 720,
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "L9uRA",
+                  "name": "article2",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "4NChB",
+                      "fill": "#2C2C2C",
+                      "content": "Vibe Coding 的边界",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "QDY2C",
+                      "fill": "#7A7268",
+                      "content": "当 AI 能帮你写代码时，程序员的价值在哪里？",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Dk0Uc",
+                      "name": "article2Meta",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "khPeo",
+                          "fill": "#C4956A",
+                          "content": "AI 实践",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "nDRDB",
+                          "fill": "#A09890",
+                          "content": "2025.02",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "line",
+                  "id": "33vuj",
+                  "fill": "#E8E4DF",
+                  "width": 720,
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "9POZJ",
+                  "name": "article3",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "2YNes",
+                      "fill": "#2C2C2C",
+                      "content": "拒绝过度设计的艺术",
+                      "fontFamily": "Inter",
+                      "fontSize": 22,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "WLUwi",
+                      "fill": "#7A7268",
+                      "content": "最好的代码是删掉的代码。如何抵制复杂化的冲动？",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "JdyG0",
+                      "name": "article3Meta",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mKoub",
+                          "fill": "#C4956A",
+                          "content": "工程哲学",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "LDePX",
+                          "fill": "#A09890",
+                          "content": "2024.12",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "rng4p",
+          "name": "Journey",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 80,
+          "padding": [
+            120,
+            160
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "CxX80",
+              "name": "journeyHeader",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VZzoQ",
+                  "fill": "#C4956A",
+                  "content": "旅程",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "BqpBl",
+                  "fill": "#2C2C2C",
+                  "content": "一步一步走过来",
+                  "fontFamily": "Inter",
+                  "fontSize": 36
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "oyR5w",
+              "name": "timeline",
+              "width": 960,
+              "gap": 64,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "iKp9U",
+                  "name": "node1",
+                  "width": 256,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "4vp5E",
+                      "fill": "#C4956A",
+                      "content": "2019",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "uDhDl",
+                      "fill": "#2C2C2C",
+                      "content": "初识工程",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "YDrkQ",
+                      "fill": "#7A7268",
+                      "textGrowth": "fixed-width",
+                      "width": 256,
+                      "content": "毕业后加入帆软，从一名普通开发开始，理解企业级软件的复杂度。",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "I7SaJ",
+                  "name": "node2",
+                  "width": 256,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "YK9pQ",
+                      "fill": "#C4956A",
+                      "content": "2021",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "BqIFH",
+                      "fill": "#2C2C2C",
+                      "content": "平台工程师",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "HE5YG",
+                      "fill": "#7A7268",
+                      "textGrowth": "fixed-width",
+                      "width": 256,
+                      "content": "开始负责平台底层架构，权限、调度、缓存，理解系统设计的权衡。",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "u8zs3",
+                  "name": "node3",
+                  "width": 256,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "IMudG",
+                      "fill": "#C4956A",
+                      "content": "2023",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "G7PCn",
+                      "fill": "#2C2C2C",
+                      "content": "独立创造",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "6Ec6l",
+                      "fill": "#7A7268",
+                      "textGrowth": "fixed-width",
+                      "width": 256,
+                      "content": "开始构建自己的工具，Eden、Northstar、MCP Servers，探索技术的边界。",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CGzKR",
+                  "name": "node4",
+                  "width": 256,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "exNvN",
+                      "fill": "#C4956A",
+                      "content": "2025",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ymw1k",
+                      "fill": "#2C2C2C",
+                      "content": "AI 原生",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "H9GI3",
+                      "fill": "#7A7268",
+                      "textGrowth": "fixed-width",
+                      "width": 256,
+                      "content": "拥抱 AI，成为 Vibe Coding 实践者，重新定义创造者的角色。",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "kqgCF",
+          "name": "Connect",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            160,
+            80,
+            120,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "DKP0K",
+              "name": "connectHeader",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "b7alo",
+                  "fill": "#C4956A",
+                  "content": "联系",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "LeKIR",
+              "name": "connectStatement",
+              "layout": "vertical",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0QeDq",
+                  "fill": "#2C2C2C",
+                  "content": "如果你觉得我们可能聊得来",
+                  "fontFamily": "Inter",
+                  "fontSize": 28
+                },
+                {
+                  "type": "text",
+                  "id": "0P8ms",
+                  "fill": "#7A7268",
+                  "content": "无论是技术交流、合作机会，还是单纯想聊聊",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VN67G",
+              "name": "contacts",
+              "gap": 40,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8r1T5",
+                  "fill": "#2C2C2C",
+                  "content": "GitHub",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "fVUzl",
+                  "fill": "#2C2C2C",
+                  "content": "Email",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "tUqe5",
+                  "fill": "#2C2C2C",
+                  "content": "Twitter",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "d7cBU",
+              "name": "footer",
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                80,
+                0,
+                0,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "2WoTp",
+                  "fill": "#A09890",
+                  "content": "Less but better.",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "text",
+                  "id": "sc0e6",
+                  "fill": "#A09890",
+                  "content": "2025 Anner. Built with care.",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "TQmrR",
+      "x": 1320,
+      "y": 0,
+      "name": "文章详情页",
+      "width": 1280,
+      "fill": "#FAF8F5",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "2Te9U",
+          "name": "articlePage",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            60,
+            160
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "vs1BH",
+              "name": "backNav",
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "xhhAE",
+                  "fill": "#7A7268",
+                  "content": "返回思考",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QRdGx",
+              "width": "fit_content(0)",
+              "height": 60
+            },
+            {
+              "type": "frame",
+              "id": "dHldk",
+              "name": "articleMeta",
+              "width": 720,
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "A0ZYz",
+                  "fill": "#C4956A",
+                  "content": "工程哲学",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "BPFuU",
+                  "fill": "#2C2C2C",
+                  "content": "第一性原理与工程实践",
+                  "fontFamily": "Inter",
+                  "fontSize": 42,
+                  "letterSpacing": -0.5
+                },
+                {
+                  "type": "text",
+                  "id": "eOBvc",
+                  "fill": "#A09890",
+                  "content": "2025年3月15日",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "TQrtc",
+              "width": "fit_content(0)",
+              "height": 48
+            },
+            {
+              "type": "line",
+              "id": "hFJwZ",
+              "fill": "#E8E4DF",
+              "width": 720,
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "OnFDc",
+              "width": "fit_content(0)",
+              "height": 48
+            },
+            {
+              "type": "frame",
+              "id": "SE75v",
+              "name": "articleBody",
+              "width": 720,
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fmDAu",
+                  "fill": "#2C2C2C",
+                  "textGrowth": "fixed-width",
+                  "width": 720,
+                  "content": "物理学家说：物理是定律，其他都是建议。",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "ExJ7c",
+                  "fill": "#2C2C2C",
+                  "textGrowth": "fixed-width",
+                  "width": 720,
+                  "content": "在工程世界里，这句话意味着什么呢？",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "s0iWx",
+                  "fill": "#2C2C2C",
+                  "textGrowth": "fixed-width",
+                  "width": 720,
+                  "content": "第一性原理思维要求我们剥去所有的假设和惯例，回到问题的本质。不是别人怎么做，而是这件事本身的约束是什么。",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "ylBwn",
+                  "name": "quoteBlock",
+                  "width": 720,
+                  "fill": "#F0EDE8",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": [
+                    24,
+                    32
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "q2tAr",
+                      "fill": "#7A7268",
+                      "textGrowth": "fixed-width",
+                      "width": 656,
+                      "content": "最好的架构不是想出来的，而是在约束条件中生长出来的。",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "1v4Py",
+                  "fill": "#2C2C2C",
+                  "textGrowth": "fixed-width",
+                  "width": 720,
+                  "content": "当我们设计一个系统时，真正重要的是理解它的核心约束：",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "fbmxd",
+                  "name": "bulletList",
+                  "width": 720,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tsFQr",
+                      "fill": "#2C2C2C",
+                      "content": "• 数据一致性要求是什么？",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "7NKyJ",
+                      "fill": "#2C2C2C",
+                      "content": "• 性能瓶颈在哪里？",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "aJd90",
+                      "fill": "#2C2C2C",
+                      "content": "• 团队的维护能力边界在哪里？",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Uw1PI",
+                  "fill": "#2C2C2C",
+                  "textGrowth": "fixed-width",
+                  "width": 720,
+                  "content": "这些才是定律。其他的——框架选择、代码风格、部署方式——都只是建议。",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bdarw",
+              "width": "fit_content(0)",
+              "height": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Pqbxb",
+      "x": 2640,
+      "y": 0,
+      "name": "作品详情页",
+      "width": 1280,
+      "fill": "#FAF8F5",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "N7gTn",
+          "name": "workPage",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            60,
+            160
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "JzbGW",
+              "name": "workBackNav",
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "x1XN4",
+                  "fill": "#7A7268",
+                  "content": "返回作品",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "egIIn",
+              "width": 1,
+              "height": 60
+            },
+            {
+              "type": "frame",
+              "id": "NLe33",
+              "name": "workHeader",
+              "width": 960,
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "1wuYr",
+                  "name": "workTags",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "uasJa",
+                      "name": "tag1",
+                      "fill": "#C4956A20",
+                      "cornerRadius": 4,
+                      "padding": [
+                        8,
+                        12
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "u8KPq",
+                          "fill": "#C4956A",
+                          "content": "工具",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "XQjzs",
+                      "name": "tag2",
+                      "fill": "#8B9E8220",
+                      "cornerRadius": 4,
+                      "padding": [
+                        8,
+                        12
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "wZmT7",
+                          "fill": "#8B9E82",
+                          "content": "开源",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "cn2W1",
+                  "fill": "#2C2C2C",
+                  "content": "Eden",
+                  "fontFamily": "Inter",
+                  "fontSize": 56,
+                  "letterSpacing": -1
+                },
+                {
+                  "type": "text",
+                  "id": "DM8HC",
+                  "fill": "#7A7268",
+                  "content": "基于 Obsidian 的博客系统，Markdown 即发布",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "xVOxl",
+                  "name": "workLinks",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "fd7BO",
+                      "name": "btnPrimary",
+                      "fill": "#2C2C2C",
+                      "cornerRadius": 6,
+                      "padding": [
+                        12,
+                        20
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "SaNnK",
+                          "fill": "#FAF8F5",
+                          "content": "查看源码",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rSoSw",
+                      "name": "btnSecondary",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 6,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E8E4DF"
+                      },
+                      "padding": [
+                        12,
+                        20
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "35Zpj",
+                          "fill": "#2C2C2C",
+                          "content": "在线体验",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "txmZi",
+              "width": 1,
+              "height": 64
+            },
+            {
+              "type": "frame",
+              "id": "cPgJw",
+              "name": "workContent",
+              "width": 960,
+              "gap": 64,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "k3aNW",
+                  "name": "workLeft",
+                  "width": 560,
+                  "layout": "vertical",
+                  "gap": 48,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "nYbO8",
+                      "name": "workSection1",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "GkU6X",
+                          "fill": "#C4956A",
+                          "content": "背景与动机",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "GAOQw",
+                          "fill": "#2C2C2C",
+                          "textGrowth": "fixed-width",
+                          "width": 560,
+                          "content": "我一直用 Obsidian 管理笔记，但发布博客时总要复制粘贴、重新排版。现有的博客系统要么太重，要么与写作流程割裂。",
+                          "lineHeight": 1.8,
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "8PZnX",
+                          "fill": "#2C2C2C",
+                          "textGrowth": "fixed-width",
+                          "width": 560,
+                          "content": "为什么不能直接发布 Markdown 文件呢？",
+                          "lineHeight": 1.8,
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "AwUbd",
+                      "name": "workSection2",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "TFfU4",
+                          "fill": "#C4956A",
+                          "content": "方案与实现",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "95nXN",
+                          "fill": "#2C2C2C",
+                          "textGrowth": "fixed-width",
+                          "width": 560,
+                          "content": "Eden 是一个轻量级的博客引擎，直接读取 Obsidian 的 Markdown 文件，无需数据库，无需后台管理界面。",
+                          "lineHeight": 1.8,
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "eI3vK",
+                          "name": "workPoints",
+                          "layout": "vertical",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fBQPz",
+                              "fill": "#2C2C2C",
+                              "content": "• 自动识别 YAML Frontmatter 作为文章元数据",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Inter",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Qjf8U",
+                              "fill": "#2C2C2C",
+                              "content": "• 支持 Obsidian 的 Wiki 链接语法",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Inter",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "U0Bjw",
+                              "fill": "#2C2C2C",
+                              "content": "• 内置代码高亮和数学公式支持",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Inter",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "9coJB",
+                  "name": "workRight",
+                  "width": 336,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 12,
+                  "layout": "vertical",
+                  "gap": 32,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "7v6qc",
+                      "fill": "#A09890",
+                      "content": "技术栈",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PrXvY",
+                      "name": "techStack",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "upmqw",
+                          "fill": "#2C2C2C",
+                          "content": "Go 1.21",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "qV1fh",
+                          "fill": "#2C2C2C",
+                          "content": "React 18",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "GxiUx",
+                          "fill": "#2C2C2C",
+                          "content": "Tailwind CSS",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "tl6h3",
+                          "fill": "#2C2C2C",
+                          "content": "Docker",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "line",
+                      "id": "ohMMB",
+                      "fill": "#E8E4DF",
+                      "width": 272,
+                      "height": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "gtcuz",
+                      "fill": "#A09890",
+                      "content": "数据",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "iPIgD",
+                      "name": "statsStack",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "BGekW",
+                          "fill": "#2C2C2C",
+                          "content": "开发周期：3周",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "834P1",
+                          "fill": "#2C2C2C",
+                          "content": "代码行数：~3000",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "m3GMD",
+                          "fill": "#2C2C2C",
+                          "content": "Stars：128",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "line",
+                      "id": "uhM8a",
+                      "fill": "#E8E4DF",
+                      "width": 272,
+                      "height": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "3vbzI",
+                      "fill": "#A09890",
+                      "content": "收获",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "7aYnJ",
+                      "fill": "#2C2C2C",
+                      "textGrowth": "fixed-width",
+                      "width": 272,
+                      "content": "重新思考了内容与呈现的关系。好的工具应该让创作者专注于内容本身。",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "gtzIP",
+              "width": 1,
+              "height": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "MSPK4",
+      "x": 3960,
+      "y": 0,
+      "name": "时间线详情页",
+      "width": 1280,
+      "fill": "#FAF8F5",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "VOvCK",
+          "name": "journeyPage",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            60,
+            160
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "1B7GH",
+              "name": "journeyBackNav",
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8Y6kI",
+                  "fill": "#7A7268",
+                  "content": "返回旅程",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wvXh0",
+              "width": 1,
+              "height": 60
+            },
+            {
+              "type": "frame",
+              "id": "Wp7kD",
+              "name": "journeyHeader",
+              "width": 720,
+              "layout": "vertical",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GImmh",
+                  "fill": "#C4956A",
+                  "content": "2023",
+                  "fontFamily": "Inter",
+                  "fontSize": 80,
+                  "fontWeight": "300",
+                  "letterSpacing": -4
+                },
+                {
+                  "type": "text",
+                  "id": "VUej7",
+                  "fill": "#2C2C2C",
+                  "content": "独立创造",
+                  "fontFamily": "Inter",
+                  "fontSize": 32
+                },
+                {
+                  "type": "text",
+                  "id": "zL3TY",
+                  "fill": "#7A7268",
+                  "textGrowth": "fixed-width",
+                  "width": 720,
+                  "content": "开始构建自己的工具，探索技术的边界",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NsAYj",
+              "width": 1,
+              "height": 64
+            },
+            {
+              "type": "frame",
+              "id": "94b8R",
+              "name": "journeyEvents",
+              "width": 720,
+              "layout": "vertical",
+              "gap": 48,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "U5Plk",
+                  "name": "event1",
+                  "width": 720,
+                  "gap": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "VTXCP",
+                      "name": "event1Left",
+                      "width": 120,
+                      "layout": "vertical",
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "uXDvC",
+                          "fill": "#C4956A",
+                          "content": "2023.03",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PGhzn",
+                      "name": "event1Right",
+                      "width": 568,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "G7x2z",
+                          "fill": "#2C2C2C",
+                          "content": "启动 Eden 项目",
+                          "fontFamily": "Inter",
+                          "fontSize": 18,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "hrUGd",
+                          "fill": "#7A7268",
+                          "textGrowth": "fixed-width",
+                          "width": 568,
+                          "content": "开始构建基于 Obsidian 的博客系统，解决自己的写作发布痛点。",
+                          "lineHeight": 1.7,
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "TTNE1",
+                  "name": "event2",
+                  "width": 720,
+                  "gap": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "cmbJ9",
+                      "name": "event2Left",
+                      "width": 120,
+                      "layout": "vertical",
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "UFJe8",
+                          "fill": "#C4956A",
+                          "content": "2023.08",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EbYEz",
+                      "name": "event2Right",
+                      "width": 568,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "qVnS3",
+                          "fill": "#2C2C2C",
+                          "content": "发布 Northstar",
+                          "fontFamily": "Inter",
+                          "fontSize": 18,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "x3vTx",
+                          "fill": "#7A7268",
+                          "textGrowth": "fixed-width",
+                          "width": 568,
+                          "content": "完成零售经济数据分析工具，帮助小商家理解数据。",
+                          "lineHeight": 1.7,
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "LItMB",
+                  "name": "event3",
+                  "width": 720,
+                  "gap": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "xg5sN",
+                      "name": "event3Left",
+                      "width": 120,
+                      "layout": "vertical",
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "jsJeK",
+                          "fill": "#C4956A",
+                          "content": "2023.12",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ektpF",
+                      "name": "event3Right",
+                      "width": 568,
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "e4qq5",
+                          "fill": "#2C2C2C",
+                          "content": "开源首个 MCP Server",
+                          "fontFamily": "Inter",
+                          "fontSize": 18,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "4UdY0",
+                          "fill": "#7A7268",
+                          "textGrowth": "fixed-width",
+                          "width": 568,
+                          "content": "发布 Confluence MCP，让 AI 能够读写企业知识库。",
+                          "lineHeight": 1.7,
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tB8Wv",
+              "width": 1,
+              "height": 64
+            },
+            {
+              "type": "frame",
+              "id": "lStcx",
+              "name": "insightCard",
+              "width": 720,
+              "fill": "#FFFFFF",
+              "cornerRadius": 12,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                40,
+                48
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "AAdbo",
+                  "fill": "#C4956A",
+                  "content": "当时的感悟",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1
+                },
+                {
+                  "type": "text",
+                  "id": "CCqbQ",
+                  "fill": "#2C2C2C",
+                  "textGrowth": "fixed-width",
+                  "width": 624,
+                  "content": "创造不是为了证明什么，而是为了解决真实的问题。当你为自己构建工具时，你会更诚实地面对什么是真正重要的。",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "3lgFp",
+              "width": 1,
+              "height": 120
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
