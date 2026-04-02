@@ -277,110 +277,254 @@ Landing (首屏)
 
 ---
 
-## 六、技术选型建议
+## 六、技术选型
 
 | 层面 | 选择 | 理由 |
 |------|------|------|
-| 框架 | Astro + React Islands | 静态为主，需要交互的地方用 React；天然适合内容站 |
-| 样式 | Tailwind CSS | 与你现有项目栈一致 |
-| 内容 | Markdown / MDX | 写作友好，新增内容 = 新增一个 .md 文件 |
-| 动画 | Framer Motion（React 区域）+ CSS 原生动画 | 声明式动画，不重 |
+| 框架 | Astro + React Islands | 前端 SSG + 需要交互的地方用 React，后台管理和 API 共存 |
+| 样式 | Tailwind CSS | 与现有项目栈一致 |
+| 数据库 | SQLite + Drizzle ORM | 零运维，单文件，个人站量级足够 |
+| MCP | @modelcontextprotocol/sdk (TypeScript) | 官方维护最活跃，与 Node 生态一致 |
+| 认证 | Session Cookie (Admin) + Bearer Token (MCP) | 两种场景两种方案 |
+| 动画 | Framer Motion + CSS 原生动画 | 声明式动画，不重 |
 | 部署 | Vercel / Cloudflare Pages | 零运维，全球 CDN |
 | 图片 | 本地 + Astro Image 优化 | 自动 WebP、响应式 |
 
-### 为什么是 Astro
-
-- 内容驱动的架构：`/src/content/works/` 放作品，`/src/content/thinking/` 放文章，新增内容零配置
-- 默认零 JS，只在需要交互的组件上 hydrate
-- MDX 支持，文章里可以嵌自定义组件（代码演示、交互图表）
-- Collection API 天然支持内容的筛选、排序、分页
-
----
-
-## 七、内容管理机制
-
-### 7.1 新增作品的流程
+### 架构总览
 
 ```
-1. 在 /src/content/works/ 下新建 project-name.mdx
-2. 填写 frontmatter（名称、描述、标签、封面、日期）
-3. 用 Markdown 写作品叙事
-4. 推送 → 自动部署
-
-不需要改任何代码、路由、或配置。
+┌──────────────────────────────────────────────┐
+│                  Astro App                    │
+│                                               │
+│  /             → 前端展示页面（公开，SSG）      │
+│  /admin        → 管理看板（Session Cookie）    │
+│  /api/auth     → 登录/登出接口                 │
+│  /api/mcp      → MCP Streamable HTTP 端点     │
+│                                               │
+│  ┌───────────────────────────────────┐        │
+│  │  Service Layer（共享业务逻辑）      │        │
+│  │  works / articles / journey /     │        │
+│  │  profile / contacts / settings    │        │
+│  └──────────────┬────────────────────┘        │
+│                 │                              │
+│  ┌──────────────▼────────────────────┐        │
+│  │  SQLite + Drizzle ORM             │        │
+│  └───────────────────────────────────┘        │
+└──────────────────────────────────────────────┘
 ```
 
-### 7.2 Frontmatter 结构示例
+- **一个项目**：前端展示、管理看板、MCP 端点全在同一个 Astro 项目中
+- **Service Layer** 是核心：MCP tools 和 Admin 页面都调用同一层逻辑
+- 前端页面构建时从 SQLite 读数据，SSG 输出静态页面
 
-```yaml
 ---
-title: "Eden"
-subtitle: "基于 Obsidian 的博客系统"
-date: 2025-06-01
-tags: ["工具", "Go", "React", "Docker"]
-cover: "./eden-cover.png"
-repo: "https://github.com/..."
-live: "https://..."
-status: "active"        # active | archived | experiment
-featured: true          # 是否在首页突出展示
----
+
+## 七、数据模型
+
+```sql
+works (作品)
+├── id, title, subtitle, description
+├── tags (JSON), status (active/archived/experiment)
+├── cover_url, repo_url, live_url
+├── motivation, implementation, reflection
+├── featured (bool), sort_order
+├── created_at, updated_at
+
+articles (文章)
+├── id, title, summary, content (Markdown)
+├── topic (工程哲学/AI实践/职业成长/生活观察)
+├── tags (JSON), published (bool)
+├── created_at, updated_at
+
+journey_stages (旅程阶段)
+├── id, year, title, summary
+├── sort_order
+├── created_at, updated_at
+
+journey_events (阶段事件)
+├── id, stage_id (FK → journey_stages)
+├── date_label, title, description
+├── sort_order
+
+profile (个人信息，单行)
+├── name, tagline, bio_1, bio_2
+├── avatar_url, resume_url
+
+contacts (联系方式)
+├── id, platform, label, url, sort_order
+
+site_settings (站点设置，KV)
+├── key, value
+├── e.g. site_title, footer_text, seo_description
 ```
 
-### 7.3 思考文章同理
+---
 
-```yaml
----
-title: "第一性原理与工程实践"
-date: 2025-03-15
-topic: "工程哲学"        # 工程哲学 | AI 实践 | 职业成长 | 生活观察
-summary: "物理是定律，其他都是建议。"
----
+## 八、MCP Server
+
+### 8.1 传输与安全
+
+- **传输方式**：Streamable HTTP，端点 `/api/mcp`
+- **认证**：Bearer Token，通过环境变量 `MCP_AUTH_TOKEN` 配置
+- **权限**：所有工具都需要有效 Token，无效/缺失返回 401
+- **限流**：Rate limiting 防滥用
+
+### 8.2 工具清单（30 个）
+
+```
+── Works (作品) ──────────────────────
+list_works          筛选/排序作品列表
+get_work            获取单个作品详情
+create_work         创建作品
+update_work         更新作品字段
+delete_work         删除作品
+reorder_works       调整作品排序
+set_work_featured   设置/取消首页推荐
+
+── Articles (文章) ──────────────────
+list_articles       筛选/排序文章列表
+get_article         获取单篇文章（含正文）
+create_article      创建文章
+update_article      更新文章
+delete_article      删除文章
+publish_article     发布/取消发布
+
+── Journey (旅程) ──────────────────
+list_stages         获取所有阶段
+get_stage           获取阶段详情（含事件）
+create_stage        创建阶段
+update_stage        更新阶段
+delete_stage        删除阶段
+create_event        阶段内添加事件
+update_event        更新事件
+delete_event        删除事件
+reorder_stages      调整阶段排序
+
+── Profile (个人信息) ──────────────
+get_profile         获取个人信息
+update_profile      更新个人信息
+
+── Contacts (联系方式) ─────────────
+list_contacts       获取联系方式列表
+create_contact      添加联系方式
+update_contact      更新联系方式
+delete_contact      删除联系方式
+
+── Site (站点设置) ─────────────────
+get_settings        获取所有设置
+update_setting      更新单个设置项
+
+── Resume (简历导出) ──────────────
+list_templates      获取可用简历模板
+preview_resume      预览简历（返回 HTML）
+export_resume_pdf   导出简历为 PDF
 ```
 
 ---
 
-## 八、渐进式构建路径
+## 九、管理看板
 
-不需要一次做完。按这个顺序推进：
+### 9.1 定位
 
-### Phase 1 — 骨架与氛围
+只读看板，不做编辑。所有内容修改通过 MCP 接口完成。
+后台的价值是「一眼看到所有内容的状态」。
 
-- [ ] 项目脚手架（Astro + Tailwind + 基础配色/字体）
+### 9.2 路由
+
+```
+/admin/login   → 登录页（用户名 + 密码）
+/admin         → 看板主页（登录保护）
+```
+
+### 9.3 认证
+
+- 用户名密码通过环境变量配置（`ADMIN_USERNAME` / `ADMIN_PASSWORD`）
+- 登录后生成 Session Cookie，httpOnly + secure
+- 未登录访问 `/admin` 重定向到 `/admin/login`
+
+### 9.4 整体布局
+
+左侧导航栏（200px） + 右侧内容区：
+
+**导航栏分组**：
+- 导航：看板总览、作品、文章、旅程、个人信息、联系方式、站点设置
+- 工具：简历导出
+
+**看板总览页**：
+- 概览行：作品数、文章数（已发布/草稿）、旅程阶段数、联系方式数
+- 作品列表：标题 + 状态标签 + 标签 + 是否推荐
+- 文章列表：标题 + 主题 + 发布状态 + 更新时间
+- 旅程时间线：年份 → 阶段标题，横向展示
+- 个人信息 + 联系方式
+
+### 9.5 简历导出页
+
+基于站点数据自动生成简历，支持预览和 PDF 导出：
+
+- **模板选择器**：缩略图卡片，支持切换不同简历模板
+  - 经典（单栏，传统布局）
+  - 双栏（左侧深色侧栏 + 右侧内容）
+  - 极简（居中对齐，大留白）
+- **A4 预览区**：居中展示模拟纸张（白底 + 投影），实时预览选中模板效果
+- **操作按钮**：刷新预览 + 导出 PDF
+- 所有内容从数据库自动填充（个人信息、经历、作品、技能）
+
+配色沿用前端暖色体系，略微中性化（更「工具感」）。
+
+---
+
+## 十、渐进式构建路径
+
+### Phase 1 — 基础设施
+
+- [ ] Astro 项目脚手架 + Tailwind + 基础配色/字体
+- [ ] SQLite + Drizzle ORM 数据库初始化
+- [ ] Service Layer 基础结构
+- [ ] 环境变量配置（Token、管理员账号）
+
+### Phase 2 — MCP Server
+
+- [ ] Streamable HTTP 端点 `/api/mcp`
+- [ ] Bearer Token 认证中间件
+- [ ] Works CRUD 工具（7 个）
+- [ ] Articles CRUD 工具（6 个）
+- [ ] Journey CRUD 工具（8 个）
+- [ ] Profile / Contacts / Settings 工具（9 个）
+- [ ] Rate limiting
+
+### Phase 3 — 管理看板
+
+- [ ] 登录页面 + Session 认证
+- [ ] 看板主页（概览 + 各区块）
+- [ ] 数据从 SQLite 实时读取
+
+### Phase 4 — 前端展示
+
 - [ ] Landing 页（一句话 + 背景氛围 + 滚动引导）
 - [ ] About 页（自述文本 + 技能标签）
+- [ ] Works 列表页（卡片流 + 筛选）+ 详情页
+- [ ] Thinking 列表页 + 阅读页
+- [ ] Journey 时间线
+- [ ] Connect 页面
 - [ ] 基础导航与页面切换
 
-### Phase 2 — 作品系统
-
-- [ ] Works 列表页（卡片流 + 筛选）
-- [ ] Works 详情页模板（叙事结构 + 章节导航）
-- [ ] 填入 3-5 个代表作品的内容
-- [ ] 卡片 hover / 详情页滚动动画
-
-### Phase 3 — 思考与旅程
-
-- [ ] Thinking 列表页（主题聚类）
-- [ ] Thinking 阅读页（舒适排版 + 进度指示）
-- [ ] Journey 时间线（滚动驱动叙事）
-- [ ] 填入 3-5 篇代表性文章
-
-### Phase 4 — 打磨
+### Phase 5 — 打磨
 
 - [ ] 全局动画微调
 - [ ] 响应式适配（移动端）
 - [ ] SEO / Open Graph
-- [ ] 暗色模式（可选，暖色系暗色方案）
-- [ ] Connect 页面
+- [ ] 暗色模式（可选）
 - [ ] 性能优化
 
 ---
 
-## 九、成功标准
+## 十一、成功标准
 
 这个网站做对了，如果：
 
 1. **一个陌生人花 3 分钟浏览后，能说出你是做什么的、擅长什么、关心什么**
-2. **新增一个作品只需要写一个 .mdx 文件，不需要碰任何代码**
+2. **通过 MCP 对 Claude 说「帮我添加一个新作品」，内容就出现在网站上**
 3. **每个作品详情页让人想读完，而不是扫一眼就走**
-4. **整体感受是安静、有质感、值得停留的**——不是又一个千篇一律的开发者主页
-5. **一年后回来看，依然觉得好看**
+4. **管理看板打开就能看到所有内容的状态，不需要翻页**
+5. **整体感受是安静、有质感、值得停留的**——不是又一个千篇一律的开发者主页
+6. **一年后回来看，依然觉得好看**
