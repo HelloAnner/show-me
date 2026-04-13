@@ -1,0 +1,63 @@
+---
+import Page from '@layouts/Page.astro'
+import ArticleCard from '@components/ArticleCard.astro'
+import { db, schema } from '@db/index'
+import { desc } from 'drizzle-orm'
+
+const topic = Astro.url.searchParams.get('topic')
+const topics = ['engineering', 'ai-practice', 'career', 'life'] as const
+const topicLabels: Record<string, string> = {
+  engineering: '工程哲学',
+  'ai-practice': 'AI 实践',
+  career: '职业成长',
+  life: '生活观察',
+}
+
+let articles = db.select().from(schema.articles).orderBy(desc(schema.articles.createdAt)).all()
+if (topic) {
+  articles = articles.filter(a => a.topic === topic)
+}
+---
+
+<Page title="Thinking" description="思考与文章">
+  <h1 class="font-display text-4xl font-bold tracking-tight mb-8">Thinking</h1>
+
+  <div class="flex flex-wrap gap-2 mb-10">
+    <a
+      href="/thinking"
+      class:list={[
+        'text-sm px-3 py-1 rounded-full border transition-colors',
+        !topic ? 'bg-ink text-surface border-ink' : 'border-ink/10 text-muted hover:border-ink/30',
+      ]}
+    >
+      All
+    </a>
+    {topics.map(t => (
+      <a
+        href={`/thinking?topic=${t}`}
+        class:list={[
+          'text-sm px-3 py-1 rounded-full border transition-colors',
+          topic === t ? 'bg-ink text-surface border-ink' : 'border-ink/10 text-muted hover:border-ink/30',
+        ]}
+      >
+        {topicLabels[t]}
+      </a>
+    ))}
+  </div>
+
+  <div>
+    {articles.map(article => (
+      <ArticleCard
+        slug={article.slug}
+        title={article.title}
+        summary={article.summary}
+        topic={article.topic}
+        date={article.createdAt}
+      />
+    ))}
+  </div>
+
+  {articles.length === 0 && (
+    <p class="text-center text-muted py-16">暂无文章</p>
+  )}
+</Page>

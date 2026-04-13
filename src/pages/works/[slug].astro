@@ -1,0 +1,46 @@
+---
+import Article from '@layouts/Article.astro'
+import { db, schema } from '@db/index'
+import { eq } from 'drizzle-orm'
+import { renderMarkdown } from '@lib/markdown'
+
+const { slug } = Astro.params
+const work = db.select().from(schema.works).where(eq(schema.works.slug, slug!)).get()
+
+if (!work) {
+  return Astro.redirect('/404')
+}
+
+const html = await renderMarkdown(work.content)
+---
+
+<Article
+  title={work.title}
+  subtitle={work.subtitle}
+  date={work.createdAt}
+  tags={work.tags}
+  description={work.description ?? work.subtitle}
+  backHref="/works"
+  backLabel="Works"
+>
+  {work.cover && (
+    <figure class="mb-12 -mx-4">
+      <img src={work.cover} alt={work.coverAlt ?? work.title} class="w-full rounded-lg" />
+    </figure>
+  )}
+
+  <Fragment set:html={html} />
+
+  <footer class="mt-12 pt-8 border-t border-ink/5 flex flex-wrap gap-4 text-sm">
+    {work.repo && (
+      <a href={work.repo} target="_blank" rel="noopener" class="text-muted hover:text-accent transition-colors">
+        Source Code &rarr;
+      </a>
+    )}
+    {work.live && (
+      <a href={work.live} target="_blank" rel="noopener" class="text-muted hover:text-accent transition-colors">
+        Live Demo &rarr;
+      </a>
+    )}
+  </footer>
+</Article>

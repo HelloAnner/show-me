@@ -1,0 +1,44 @@
+---
+import Base from './Base.astro'
+import Header from '@components/Header.astro'
+import Footer from '@components/Footer.astro'
+
+interface Props {
+  title: string
+  subtitle?: string
+  date?: string
+  tags?: string[]
+  description?: string
+  backHref?: string
+  backLabel?: string
+}
+
+const { title, subtitle, date, tags, description, backHref = '/works', backLabel = 'Works' } = Astro.props
+---
+
+<Base title={title} description={description}>
+  <Header />
+  <main class="mx-auto max-w-reading px-6 pt-28 pb-16">
+    <a href={backHref} class="inline-flex items-center gap-1 text-sm text-muted hover:text-ink transition-colors mb-8">
+      &larr; {backLabel}
+    </a>
+    <header class="mb-12">
+      <h1 class="font-display text-4xl font-bold tracking-tight mb-3">{title}</h1>
+      {subtitle && <p class="text-lg text-muted">{subtitle}</p>}
+      <div class="flex items-center gap-4 mt-4">
+        {date && <time class="text-sm text-muted">{new Date(date).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}</time>}
+        {tags && tags.length > 0 && (
+          <div class="flex gap-2">
+            {tags.map(tag => (
+              <span class="text-xs px-2 py-0.5 bg-code-bg text-muted rounded">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </header>
+    <article class="prose-showme">
+      <slot />
+    </article>
+  </main>
+  <Footer />
+</Base>

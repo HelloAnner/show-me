@@ -1,0 +1,81 @@
+---
+import Base from '@layouts/Base.astro'
+import Header from '@components/Header.astro'
+import Footer from '@components/Footer.astro'
+import WorkCard from '@components/WorkCard.astro'
+import ArticleCard from '@components/ArticleCard.astro'
+import { db, schema } from '@db/index'
+import { eq, desc } from 'drizzle-orm'
+
+const featuredWorks = db.select().from(schema.works)
+  .where(eq(schema.works.featured, true))
+  .orderBy(desc(schema.works.createdAt))
+  .limit(3)
+  .all()
+
+const recentArticles = db.select().from(schema.articles)
+  .orderBy(desc(schema.articles.createdAt))
+  .limit(3)
+  .all()
+
+const taglineRow = db.select().from(schema.siteInfo).where(eq(schema.siteInfo.key, 'tagline')).get()
+const tagline = taglineRow ? JSON.parse(taglineRow.value as string) : '构建工具，记录思考。'
+---
+
+<Base>
+  <Header />
+
+  <!-- Hero -->
+  <section class="min-h-[70vh] flex items-center justify-center px-6">
+    <div class="text-center max-w-lg">
+      <h1 class="font-display text-5xl font-bold tracking-tight mb-4">Anner</h1>
+      <p class="text-lg text-muted">{tagline}</p>
+    </div>
+  </section>
+
+  <!-- Featured Works -->
+  {featuredWorks.length > 0 && (
+    <section class="mx-auto max-w-content px-6 mb-section">
+      <div class="flex items-baseline justify-between mb-8">
+        <h2 class="font-display text-2xl font-semibold tracking-tight">Works</h2>
+        <a href="/works" class="text-sm text-muted hover:text-accent transition-colors">View all &rarr;</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredWorks.map(work => (
+          <WorkCard
+            slug={work.slug}
+            title={work.title}
+            subtitle={work.subtitle}
+            tags={work.tags}
+            cover={work.cover}
+            category={work.category}
+            featured={work.featured}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Recent Thinking -->
+  {recentArticles.length > 0 && (
+    <section class="mx-auto max-w-reading px-6 mb-section">
+      <div class="flex items-baseline justify-between mb-8">
+        <h2 class="font-display text-2xl font-semibold tracking-tight">Thinking</h2>
+        <a href="/thinking" class="text-sm text-muted hover:text-accent transition-colors">View all &rarr;</a>
+      </div>
+      <div>
+        {recentArticles.map(article => (
+          <ArticleCard
+            slug={article.slug}
+            title={article.title}
+            summary={article.summary}
+            topic={article.topic}
+            date={article.createdAt}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <Footer />
+</Base>

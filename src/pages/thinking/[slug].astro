@@ -1,0 +1,34 @@
+---
+import Article from '@layouts/Article.astro'
+import { db, schema } from '@db/index'
+import { eq } from 'drizzle-orm'
+import { renderMarkdown } from '@lib/markdown'
+
+const topicLabels: Record<string, string> = {
+  engineering: '工程哲学',
+  'ai-practice': 'AI 实践',
+  career: '职业成长',
+  life: '生活观察',
+}
+
+const { slug } = Astro.params
+const article = db.select().from(schema.articles).where(eq(schema.articles.slug, slug!)).get()
+
+if (!article) {
+  return Astro.redirect('/404')
+}
+
+const html = await renderMarkdown(article.content)
+---
+
+<Article
+  title={article.title}
+  subtitle={article.summary}
+  date={article.createdAt}
+  tags={[topicLabels[article.topic] ?? article.topic]}
+  description={article.description ?? article.summary}
+  backHref="/thinking"
+  backLabel="Thinking"
+>
+  <Fragment set:html={html} />
+</Article>

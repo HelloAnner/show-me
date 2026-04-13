@@ -1,0 +1,14 @@
+services:
+  showme:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "4321:4321"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - DATA_DIR=/app/data
+      - SITE_URL=http://localhost:4321
+    restart: unless-stopped

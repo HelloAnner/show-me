@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface text-ink font-sans;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  ::selection {
+    @apply bg-accent/20;
+  }
+}
+
+@layer components {
+  .prose-showme {
+    @apply max-w-reading font-serif text-ink leading-relaxed;
+    letter-spacing: 0.01em;
+  }
+
+  .prose-showme h1 {
+    @apply font-display text-3xl font-semibold tracking-tight mt-16 mb-6;
+  }
+  .prose-showme h2 {
+    @apply font-display text-2xl font-semibold tracking-tight mt-12 mb-4;
+  }
+  .prose-showme h3 {
+    @apply font-display text-xl font-medium tracking-tight mt-8 mb-3;
+  }
+
+  .prose-showme p {
+    @apply mb-6 leading-[1.8];
+  }
+
+  .prose-showme a {
+    @apply text-accent underline underline-offset-2 decoration-accent/40 hover:decoration-accent transition-colors;
+  }
+
+  .prose-showme ul,
+  .prose-showme ol {
+    @apply mb-6 pl-6;
+  }
+  .prose-showme li {
+    @apply mb-2;
+  }
+  .prose-showme ul li {
+    @apply list-disc;
+  }
+  .prose-showme ol li {
+    @apply list-decimal;
+  }
+
+  .prose-showme blockquote {
+    @apply border-l-2 border-accent/40 pl-4 italic text-muted my-6;
+  }
+
+  .prose-showme code {
+    @apply font-mono text-sm bg-code-bg px-1.5 py-0.5 rounded;
+  }
+
+  .prose-showme pre {
+    @apply mb-6 rounded-lg overflow-x-auto text-sm;
+  }
+  .prose-showme pre code {
+    @apply bg-transparent px-0 py-0;
+  }
+
+  .prose-showme figure {
+    @apply my-8;
+  }
+  .prose-showme img {
+    @apply rounded-lg max-w-full;
+  }
+  .prose-showme figcaption {
+    @apply text-center text-sm text-muted mt-2;
+  }
+
+  .prose-showme hr {
+    @apply border-none h-px bg-ink/10 my-12;
+  }
+
+  .prose-showme strong {
+    @apply font-semibold;
+  }
+}

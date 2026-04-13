@@ -1,0 +1,67 @@
+---
+import Page from '@layouts/Page.astro'
+import WorkCard from '@components/WorkCard.astro'
+import { db, schema } from '@db/index'
+import { eq, desc } from 'drizzle-orm'
+
+const category = Astro.url.searchParams.get('category')
+const categories = ['tool', 'platform', 'ai', 'opensource', 'experiment'] as const
+const categoryLabels: Record<string, string> = {
+  tool: '工具',
+  platform: '平台',
+  ai: 'AI',
+  opensource: '开源',
+  experiment: '实验',
+}
+
+let works = db.select().from(schema.works).orderBy(desc(schema.works.createdAt)).all()
+if (category) {
+  works = works.filter(w => w.category === category)
+}
+---
+
+<Page title="Works" description="作品集" wide>
+  <h1 class="font-display text-4xl font-bold tracking-tight mb-8">Works</h1>
+
+  <!-- Category Filter -->
+  <div class="flex flex-wrap gap-2 mb-10">
+    <a
+      href="/works"
+      class:list={[
+        'text-sm px-3 py-1 rounded-full border transition-colors',
+        !category ? 'bg-ink text-surface border-ink' : 'border-ink/10 text-muted hover:border-ink/30',
+      ]}
+    >
+      All
+    </a>
+    {categories.map(cat => (
+      <a
+        href={`/works?category=${cat}`}
+        class:list={[
+          'text-sm px-3 py-1 rounded-full border transition-colors',
+          category === cat ? 'bg-ink text-surface border-ink' : 'border-ink/10 text-muted hover:border-ink/30',
+        ]}
+      >
+        {categoryLabels[cat]}
+      </a>
+    ))}
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {works.map(work => (
+      <WorkCard
+        slug={work.slug}
+        title={work.title}
+        subtitle={work.subtitle}
+        tags={work.tags}
+        cover={work.cover}
+        category={work.category}
+        featured={work.featured}
+      />
+    ))}
+  </div>
+
+  {works.length === 0 && (
+    <p class="text-center text-muted py-16">暂无作品</p>
+  )}
+</Page>

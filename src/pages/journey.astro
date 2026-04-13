@@ -1,0 +1,54 @@
+---
+import Page from '@layouts/Page.astro'
+import { db, schema } from '@db/index'
+import { asc } from 'drizzle-orm'
+
+const nodes = db.select().from(schema.journeyNodes).orderBy(asc(schema.journeyNodes.sortOrder)).all()
+---
+
+<Page title="Journey" description="旅程与成长">
+  <h1 class="font-display text-4xl font-bold tracking-tight mb-12">Journey</h1>
+
+  <div class="relative">
+    <!-- Timeline line -->
+    <div class="absolute left-[7px] top-2 bottom-2 w-px bg-ink/10" />
+
+    <div class="space-y-12">
+      {nodes.map((node, i) => (
+        <div class="relative pl-8">
+          <!-- Dot -->
+          <div class:list={[
+            'absolute left-0 top-2 w-[15px] h-[15px] rounded-full border-2',
+            i === 0 ? 'bg-accent border-accent' : 'bg-surface border-ink/20',
+          ]} />
+
+          <div>
+            <div class="flex items-baseline gap-3 mb-2">
+              <h3 class="font-display text-lg font-semibold">{node.role}</h3>
+              {node.organization && <span class="text-sm text-muted">@ {node.organization}</span>}
+            </div>
+            <time class="text-sm text-muted block mb-3">{node.period}</time>
+            <p class="text-muted mb-4">{node.summary}</p>
+
+            <ul class="space-y-1 mb-4">
+              {node.milestones.map(m => (
+                <li class="flex items-start gap-2 text-sm text-muted">
+                  <span class="shrink-0 w-1 h-1 rounded-full bg-accent mt-2" />
+                  {m}
+                </li>
+              ))}
+            </ul>
+
+            <blockquote class="border-l-2 border-accent/40 pl-3 text-sm italic text-muted">
+              {node.insight}
+            </blockquote>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {nodes.length === 0 && (
+    <p class="text-center text-muted py-16">旅程正在书写中...</p>
+  )}
+</Page>

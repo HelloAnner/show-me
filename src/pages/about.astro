@@ -1,0 +1,33 @@
+---
+import Page from '@layouts/Page.astro'
+import { db, schema } from '@db/index'
+import { eq } from 'drizzle-orm'
+import { renderMarkdown } from '@lib/markdown'
+
+const aboutRow = db.select().from(schema.siteInfo).where(eq(schema.siteInfo.key, 'about')).get()
+const about = aboutRow ? JSON.parse(aboutRow.value as string) : ''
+
+const rolesRow = db.select().from(schema.siteInfo).where(eq(schema.siteInfo.key, 'roles')).get()
+const roles: string[] = rolesRow ? JSON.parse(rolesRow.value as string) : []
+
+const html = about ? await renderMarkdown(about) : ''
+---
+
+<Page title="About" description="关于 Anner">
+  <h1 class="font-display text-4xl font-bold tracking-tight mb-8">About</h1>
+
+  <div class="prose-showme mb-12">
+    <Fragment set:html={html} />
+  </div>
+
+  {roles.length > 0 && (
+    <div class="space-y-3">
+      {roles.map(role => (
+        <div class="flex items-start gap-3">
+          <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-accent mt-2" />
+          <span class="text-muted">{role}</span>
+        </div>
+      ))}
+    </div>
+  )}
+</Page>

@@ -1,0 +1,31 @@
+---
+const topicLabels: Record<string, string> = {
+  engineering: '工程哲学',
+  'ai-practice': 'AI 实践',
+  career: '职业成长',
+  life: '生活观察',
+}
+
+interface Props {
+  slug: string
+  title: string
+  summary: string
+  topic: string
+  date: string
+}
+
+const { slug, title, summary, topic, date } = Astro.props
+---
+
+<a href={`/thinking/${slug}`} class="group block py-6 border-b border-ink/5 last:border-none">
+  <div class="flex items-start justify-between gap-4">
+    <div>
+      <h3 class="font-display text-lg font-medium tracking-tight group-hover:text-accent transition-colors mb-1">{title}</h3>
+      <p class="text-sm text-muted">{summary}</p>
+    </div>
+    <div class="shrink-0 flex flex-col items-end gap-1">
+      <span class="text-xs px-2 py-0.5 bg-code-bg text-muted rounded">{topicLabels[topic] ?? topic}</span>
+      <time class="text-xs text-muted/60">{new Date(date).toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' })}</time>
+    </div>
+  </div>
+</a>
